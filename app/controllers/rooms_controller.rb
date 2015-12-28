@@ -3,7 +3,7 @@ class RoomsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
 
   def index
-    @rooms = Room.all
+    @rooms = Room.search(params[:search])
   end
 
   def your_listings

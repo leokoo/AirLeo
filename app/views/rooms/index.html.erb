@@ -13,6 +13,11 @@
 				Listings
 			</div>
 			<div class="panel-body">
+
+				  <%= form_tag rooms_path, :method => 'get' do %>
+				    <%= text_field_tag :search, params[:search] %>
+				    <%= submit_tag "Search" %>
+				  <% end %>
 				
 				<% @rooms.each do |room| %>
 					<div class="row">

@@ -14,4 +14,12 @@ class Room < ActiveRecord::Base
   validates :listing_name, presence: true, length: {maximum: 50}
   validates :summary, presence: true, length: {maximum: 500}
   validates :address, presence: true
+
+  def self.search(search)
+    if search
+        @rooms = Room.where(["listing_name LIKE ?","%#{search}%"])
+    else
+        all
+    end
+  end
 end
