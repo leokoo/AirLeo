@@ -3,6 +3,10 @@ class RoomsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
 
   def index
+    @rooms = Room.all
+  end
+
+  def listing
     @rooms = current_user.rooms
   end
 
