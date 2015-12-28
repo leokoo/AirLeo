@@ -6,7 +6,7 @@ class RoomsController < ApplicationController
     @rooms = Room.all
   end
 
-  def listing
+  def your_listings
     @rooms = current_user.rooms
   end
 
